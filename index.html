@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>💖 For You</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,#ffeefc,#fff7fd);
+  overflow:hidden;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* CARD 9:16 */
+.card{
+  width:90%;
+  max-width:380px;
+  aspect-ratio:9/16;
+  padding:25px 20px 30px;
+  border-radius:30px;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  text-align:center;
+  display:none;
+  position:absolute;
+  border:6px dashed #ff9bd5;
+  background-size:cover;
+  background-position:center;
+}
+
+/* HIASAN EMOJI */
+.card::before{
+  content:"🐣💛";
+  position:absolute;
+  top:-18px;
+  left:-18px;
+  font-size:26px;
+}
+.card::after{
+  content:"💛🐣";
+  position:absolute;
+  bottom:-18px;
+  right:-18px;
+  font-size:26px;
+}
+
+.emoji-decor{
+  position:absolute;
+  top:10px;
+  right:12px;
+  font-size:22px;
+  opacity:.9;
+}
+
+/* BACKGROUND */
+#page0{
+  background:
+    radial-gradient(circle at top,#fff0fa,white),
+    repeating-linear-gradient(45deg,#ffd6ec 0 10px,#fff 10px 20px);
+}
+#pageLove{
+  background:linear-gradient(135deg,#ffe0f3,#ffffff);
+}
+#page1{
+  background:linear-gradient(135deg,#fff1d6,#ffffff);
+}
+#page2{
+  background:linear-gradient(135deg,#eafff5,#ffffff);
+}
+#page3{
+  background:linear-gradient(135deg,#eef2ff,#ffffff);
+}
+#page4{
+  background:linear-gradient(135deg,#ffe0e9,#ffffff);
+}
+#page5{
+  background:linear-gradient(135deg,#ffe6f7,#ffffff);
+}
+#videoPage{
+  background:linear-gradient(135deg,#fff0fa,#ffffff);
+}
+
+.card.active{
+  display:block;
+  animation:cuteIn .6s ease;
+}
+.card.exit{
+  animation:cuteOut .4s ease forwards;
+}
+
+@keyframes cuteIn{
+  0%{opacity:0;transform:scale(.8) translateY(40px)}
+  60%{transform:scale(1.05) translateY(-5px)}
+  100%{opacity:1;transform:scale(1)}
+}
+@keyframes cuteOut{
+  to{opacity:0;transform:scale(.7) translateY(-30px)}
+}
+
+/* FOTO */
+.photo-frame{
+  border:5px solid #ffd1ea;
+  border-radius:20px;
+  padding:6px;
+  margin-bottom:15px;
+  background:#fff0fa;
+
+  aspect-ratio: 1 / 1;   /* FRAME 1:1 */
+}
+
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:15px;
+  display:block;
+}
+
+/* TEXT */
+h2{
+  font-family:"Bubblegum Sans",cursive;
+  font-size:26px;
+}
+p{font-size:14px}
+
+/* BUTTON */
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#ff8ccb;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+  margin:8px;
+}
+button:hover{transform:scale(1.08)}
+#noBtn{position:absolute}
+
+/* FLOAT HEART */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  animation:float 4s linear infinite;
+}
+@keyframes float{
+  to{transform:translateY(-120vh);opacity:0}
+}
+
+iframe{
+  width:100%;
+  height:260px;
+  border-radius:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 0 -->
+<div class="card active" id="page0">
+  <div class="emoji-decor">🐣💛</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/fVqPkwW9/d9a64ae7ab14493b8717a784123209a8.jpg">
+  </div>
+  <h2>😳 Kamu sayang sama aku nggak?</h2>
+  <button onclick="goTo('pageLove')">💗 sayaang</button>
+  <button id="noBtn">nggak!</button>
+</div>
+
+<!-- PAGE LOVE -->
+<div class="card" id="pageLove">
+  <div class="emoji-decor">💛🐣</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/hjxsYsp/994b9e46d9e88c82768c309ead436c54.jpg">
+  </div>
+  <h2>💖 I LOVE YOU 💖</h2>
+  <p>Aku juga sayang banget sama kamu💖Jujur aku bersyukur banget punya kamu. Walaupun kita gak belum bisa ketemu, kamu tetep nemenin aku dengan caramu sendiri. Makasih ya udah sabar, udah bertahan, dan masih mau jalan sejauh ini bareng aku. Semoga ke depannya jarak ini bisa kita lewatin sama-sama.🥰💛</p>
+  <button onclick="goTo('page1')">Lanjut Sayang 💕</button>
+</div>
+
+<!-- PAGE 1 -->
+<div class="card" id="page1">
+  <div class="emoji-decor">🐣💛</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/pGSCvfs/50afc325383cfd4f4021a1c94dc96eb5.jpg">
+  </div>
+  <h2>🎉 HBD Sayang 🎂</h2>
+  <p> Hari ini hari spesial ya buat kamu, selamat ulang tahun sayaaaaaannggg🐣💛.
+jujur aku ngerasa ada satu hal yang kurang hari ini, aku gak bisa ada di samping kamu. pengen rasanya nemenin langsung, denger kamu ketawa, dan ngerayain hari spesial ini bareng kamu.
+aku ini gak bisa gantiin kehadiran aku secara nyata, tapi perasaan aku ke kamu itu beneran. dari jauh pun, kamu tetap jadi orang yang aku pikirin hari ini.
+aku harap suatu saat nanti, di ulang tahun kamu berikutnya, aku gak cuma ngucapin, tapi beneran berdiri di samping kamu, ngerayain kamu bareng bareng 😊💖</p>
+  <button onclick="goTo('page2')">➡️ Pencet Ini</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card" id="page2">
+  <div class="emoji-decor">💛🐣</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/F4zBtxdZ/1001046918-picsay.jpg">
+  </div>
+  <h2>💞 Wish 💞</h2>
+  <p>aku harap hari-hari ke depan kamu selalu dikelilingi hal-hal yang bikin kamu senyum. langkah kamu dimudahin, pikiran kamu diringanin, dan setiap usaha kecil kamu berasa berarti.
+semoga kamu terus tumbuh jadi diri kamu yang sekarang ini... yang hangat, yang tulus, dan yang gampang bikin orang nyaman. dan semoga kamu selalu ngerasa ditemani, dihargai, dan disayang, dengan cara yang sederhana tapi nyata.
+aku seneng bisa ada di fase hidup kamu yang ini. aku doain semua impianmu tercapai, semoga kamu selalu bahagia, panjang umur, sehat selalu, dan makin sayang sama aku 💗✨</p>
+  <button onclick="goTo('page3')">➡️ Pencet Lagi</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card" id="page3">
+  <div class="emoji-decor">🐣💛</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/cXxjJmmF/2f799ca629aecd95b01a22715672b251.jpg">
+  </div>
+  <h2>✨ Dari Aku ✨</h2>
+  <p>Jujur aku mau bilang, ini pertama kalinya aku ngasih hadiah ke cewek. aku sempet bingung, takut gak pas, takut kamu gak sukaa.
+maaf kalau hadiahnya sederhana, aku masih belajar. tapi satu hal yang pasti, aku milih dan ngasih ini sambil mikirin kamu terus. aku pengen kamu senyum, itu aja.
+makasih ya udah bikin aku ngerasain hal-hal baru, termasuk berani ngasih sesuatu ke orang yang aku sayang. semoga di umur baru ini kamu bahagia, sehat, dan tetap jadi kamu yang aku sukaaa 💖</p>
+  <button onclick="goTo('page4')">➡️ Lagi Lagi</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="card" id="page4">
+  <div class="emoji-decor">💛🐣</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/60X02Kt5/614e0206ff2c69cb1f2b72af6c690574-1.jpg">
+  </div>
+  <h2>💗 Aku Sayang Kamu 💗</h2>
+  <p>Walaupun hubungan kita masih terbilang baru, aku ngerasa ini cukup buat bikin aku yakin satu hal: rasa nyaman itu nyata. semuanya ngalir aja, pelan, tapi gak kosong.
+aku sukaa gimana kita masih belajar satu sama lain, masih canggung dikit, masih nemuin hal-hal kecil yang bikin senyum sendiri. dan anehnya, justru di situ aku ngerasa deket sama kamu. 😊💖</p>
+  <button onclick="goTo('page5')">➡️Hihi Lagiii</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="card" id="page5">
+  <div class="emoji-decor">🐣💛</div>
+  <div class="photo-frame">
+    <img src="https://i.ibb.co/9DW3m17/c4e8337d40650a77dec58ed07d1f7acd.jpg">
+  </div>
+  <h2>💖 I LOVE YOU 💖</h2>
+  <p>Abis ini aku ada buat satu video khusus buat kamu, maaf ya kalau video nya kurang bagus wkwk, lopyuuu🐣💛</p>
+  <button onclick="goTo('videoPage')">🎥 Lihat Video</button>
+</div>
+
+<!-- VIDEO PAGE -->
+<div class="card" id="videoPage">
+  <div class="emoji-decor">💛🐣</div>
+  <h2>🎬 Buat Kamu 💖</h2>
+
+  <a 
+    href="https://youtu.be/E4g3w0wuqOE" 
+    target="_blank"
+    style="display:inline-block; position:relative;"
+  >
+    <img 
+      src="https://img.youtube.com/vi/E4g3w0wuqOE/hqdefault.jpg"
+      alt="Play Video"
+      style="width:100%; max-width:560px; border-radius:12px;"
+    />
+
+    <!-- icon play -->
+    <span style="
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      font-size:60px;
+      color:white;
+      text-shadow:0 0 10px rgba(0,0,0,0.6);
+    ">▶</span>
+  </a>
+
+  <p>Klik videonya yaaa sayaang 💖</p>
+</div>
+
+<script>
+function goTo(id){
+  const current=document.querySelector('.card.active');
+  if(current){
+    current.classList.add('exit');
+    setTimeout(()=>{
+      current.classList.remove('active','exit');
+      document.getElementById(id).classList.add('active');
+    },400);
+  }
+}
+
+/* tombol kabur */
+const noBtn=document.getElementById('noBtn');
+noBtn.addEventListener('mouseover',()=>{
+  noBtn.style.left=Math.random()*70+'%';
+  noBtn.style.top=Math.random()*70+'%';
+});
+
+/* floating heart */
+setInterval(()=>{
+  const h=document.createElement('div');
+  h.className='heart';
+  h.innerHTML='💛';
+  h.style.left=Math.random()*100+'vw';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),4000);
+},600);
+</script>
+
+</body>
+</html>
